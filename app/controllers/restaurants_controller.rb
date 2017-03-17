@@ -5,9 +5,6 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.joins(:ratings).select("restaurants.id, restaurants.name, avg(ratings.rating) as average_rating").group("restaurants.id").order("average_rating DESC")
-    
-    # @restaurants = Restaurant.includes(:ratings)
-    # @restaurants[0].ratings.avg(:rating)
+    @restaurants = Restaurant.joins(:ratings).select("name, avg(rating) as average_rating").group("restaurants.id").order("average_rating DESC")
   end
 end
