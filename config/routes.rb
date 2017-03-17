@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'restaurants/create'
-
-  get 'restaurants/index'
+  resources :restaurants, only: [:index, :create]
 
   get 'users/login' => 'users#login'
   post 'users/login' => 'users#login_create'
