@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.glyphicon').hover(function(){
+  $('.glyphicon-star-empty').hover(function(){
     $(this).attr('class', 'glyphicon glyphicon-star');
     $(this).prevAll().attr('class', 'glyphicon glyphicon-star');
   }, function(){

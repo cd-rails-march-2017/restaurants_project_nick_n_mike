@@ -8,14 +8,14 @@ class UsersController < ApplicationController
   end
 
   def login_create
-    @user = User.where("email =? AND password =?", params[:email], params[:password])
+    @user = User.find_by_email(params[:email]).try(:authenticate, params[:password])
 
-    if @user.empty?
+    if !@user
       flash[:errors] =  ["Invalid Login"]
       redirect_to users_login_path
     else
       flash[:notice] = ["You are logged in"]
-      session[:user] = {id: @user[0].id, email: @user[0].email}
+      session[:user] = {id: @user.id, email: @user.email}
       redirect_to root_path
     end
   end
