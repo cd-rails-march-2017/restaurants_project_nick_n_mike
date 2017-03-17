@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: restaurant_project_production
-  username: nickphillips
-  password: 
+  username: michael_mitchell
+  password:

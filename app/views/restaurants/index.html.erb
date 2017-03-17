@@ -1,2 +1,6 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<%= render 'shared/new' %>
+<h2>Restaurants</h2>
+
+<% @restaurants.each do |restaurant| %>
+<h4 class="restaurant"><%= restaurant.name %> - <%= restaurant.average_rating %>
+<% end %>
