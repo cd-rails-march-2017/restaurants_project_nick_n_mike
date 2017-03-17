@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.glyphicon').hover(function(){
+  $('.glyphicon-star-empty').hover(function(){
     $(this).attr('class', 'glyphicon glyphicon-star');
     $(this).prevAll().attr('class', 'glyphicon glyphicon-star');
   }, function(){
@@ -7,7 +7,11 @@ $(document).ready(function(){
     $(this).prevAll().attr('class', 'glyphicon glyphicon-star-empty');
   })
 
-  $('.glyphicon').click(function(){
+  $('.glyphicon-plus').click(function() {
+    $('#restaurant_form').slideToggle()
+  })
+
+  $('.glyphicon-star-full').click(function(){
     $(this).attr('class', 'glyphicon glyphicon-star');
     $(this).prevAll().attr('class', 'glyphicon glyphicon-star');
     $('.glyphicon').unbind('mouseenter mouseleave');
