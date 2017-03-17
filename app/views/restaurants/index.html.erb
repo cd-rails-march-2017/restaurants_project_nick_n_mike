@@ -2,5 +2,5 @@
 <h2>Restaurants</h2>
 
 <% @restaurants.each do |restaurant| %>
-<h4 class="restaurant"><%= restaurant.name %> - <%= restaurant.average_rating %>
+<h4 class="restaurant"><%= restaurant.name %> - <%= restaurant.ratings.average(:rating)%><h4>
 <% end %>
